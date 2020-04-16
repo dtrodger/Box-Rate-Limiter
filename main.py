@@ -16,13 +16,19 @@ BOX_AUTH_FILE_PATH = os.path.join(
 )
 
 
+def configure_logging():
+    """
+    Configure INFO level logging to stdout
+    """
+    logging.basicConfig(level=logging.INFO)
+
+
 class RateLimiter:
     def __init__(
         self,
         rate_limit=10,
         rate_period=1,
     ):
-
         self._rate_limit = rate_limit
         self._rate_period = rate_period
         self._request_start_times_deque = deque()
@@ -52,6 +58,7 @@ class RateLimiter:
 
 
 def main():
+    configure_logging()
     # Load the Box Platform app's JWT keys into memory as a dicitons
     with open(BOX_AUTH_FILE_PATH) as fh:
         box_auth_dict = json.load(fh)
@@ -75,6 +82,7 @@ def main():
 
             # Call Box
             folder = box_client.folder("0")
+            log.info(f"got Box folder {folder}")
 
         # Call the rate limiter method directly
         # rate_limiter.limit()
