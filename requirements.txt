@@ -1,0 +1,14 @@
+attrs==19.3.0
+boxsdk==2.7.1
+certifi==2019.11.28
+cffi==1.14.0
+chardet==3.0.4
+cryptography==2.8
+idna==2.9
+pycparser==2.20
+PyJWT==1.7.1
+requests==2.23.0
+requests-toolbelt==0.9.1
+six==1.14.0
+urllib3==1.25.8
+wrapt==1.12.1
