@@ -16,4 +16,4 @@ to
 `box-auth.json`  
 5. Add Box Platform JWT keys to the box-auth.json file  
 6. Run the app  
-`$ python main`  
+`$ python main.py`  
